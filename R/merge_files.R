@@ -11,10 +11,10 @@ merge_csv <- function(
                    output_filename = "results.csv"
                    ){
 
-  cat(glue::glue("Reading CSV files in {folder_name}"))
+  cat(glue::glue("Reading CSV files in {folder_name}\n"))
   paths <- fs::dir_ls(path = glue::glue("./{folder_name}"),
                       glob = "*.csv")
-  cat(glue::glue("{length(paths)} CSV files were found"))
+  cat(glue::glue("{length(paths)} CSV files were found\n"))
 
   df <-
     purrr::map(paths,
@@ -25,5 +25,5 @@ merge_csv <- function(
   readr::write_csv(df,
                    file = output_filename)
 
-  cat(glue::glue("Output file written to {output_filename}"))
+  cat(glue::glue("Output file written to {output_filename}\n"))
 }
