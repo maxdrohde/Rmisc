@@ -3,3 +3,4 @@
 export(assign_variables)
 export(gghist)
 export(ggsave_beamer)
+export(merge_csv)
